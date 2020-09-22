@@ -72,6 +72,7 @@
     <Compile Include="StudentCreator.cs" />
     <Compile Include="SystemController.cs" />
     <Compile Include="University.cs" />
+    <Compile Include="UniversityCreator.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserCreator.cs" />
     <Compile Include="UserDecorator.cs" />

@@ -16,19 +16,29 @@ namespace UnifiedSystemofAbiturient
     {
         private List<University> Universities = new List<University>();
         private List<User> Users=new List<User>();
+        private UniversityCreator UniversityCreator = new UniversityCreator();
         private ActiveUserCreator ActiveUserCreator = new ActiveUserCreator();
         private AbiturientCreator AbiturientCreator = new AbiturientCreator();
         private StudentCreator StudentCreator = new StudentCreator();
         private GraduateCreator GraduateCreator = new GraduateCreator();
         private SelectionContext SelectionContext = new SelectionContext();
+        private ApplicationCreator ApplicationCreator;
+        private SelectionContext RaitingCreator;
         public SystemController()
         {
             ApplicationCreator = new ApplicationCreator();
             RaitingCreator = new SelectionContext();
+            UniversityCreator.setUniversities(Universities);
         }
 
-        private ApplicationCreator ApplicationCreator;
-        private SelectionContext RaitingCreator;
+        public List<User> getUsers()
+        {
+            return Users;
+        }
+        public List<University> getUniversities()
+        {
+            return Universities;
+        }
 
         public void createApplication(University university, Abiturient abiturient, Subjects[] subjects)
         {
@@ -37,9 +47,10 @@ namespace UnifiedSystemofAbiturient
             abiturient.addApplication(applicatioN);
         }
 
-        public void newUniversity(string title, int places)
+        public University newUniversity(string title, int places)
         {
-            Universities.Add(new University(title,places));
+            University u = UniversityCreator.newUniversity(title, places);
+            return u;
         }
 
         public User newActiveUser(String name, Dictionary<Subjects, int> points)
@@ -50,7 +61,7 @@ namespace UnifiedSystemofAbiturient
             Users.Add(au);
             return au;
         }
-        public void newAbiturient(User user, String name, Dictionary<Subjects, int> points)
+        public Abiturient newAbiturient(User user, String name, Dictionary<Subjects, int> points)
         {
             if (user == null)
             {
@@ -58,8 +69,9 @@ namespace UnifiedSystemofAbiturient
             }
             Abiturient a = (Abiturient)AbiturientCreator.newUser(user);
             Users.Add(a);
+            return a;
         }
-        public void newStudent(User user, String name, Dictionary<Subjects, int> points)
+        public Student newStudent(User user, String name, Dictionary<Subjects, int> points)
         {
             if (user == null)
             {
@@ -67,8 +79,9 @@ namespace UnifiedSystemofAbiturient
             }
             Student s = (Student)StudentCreator.newUser(user);
             Users.Add(s);
+            return s;
         }
-        public void newGraduate(User user, String name, Dictionary<Subjects, int> points)
+        public Graduate newGraduate(User user, String name, Dictionary<Subjects, int> points)
         {
             if (user == null)
             {
@@ -76,6 +89,7 @@ namespace UnifiedSystemofAbiturient
             }
             Graduate g = (Graduate)GraduateCreator.newUser(user);
             Users.Add(g);
+            return g;
         }
 
         public List<University> getSelection(int selectionNumber)

@@ -34,8 +34,8 @@
       <Path>
         <Point X="18" Y="12.497" />
         <Point X="18.375" Y="12.497" />
-        <Point X="18.375" Y="11.916" />
-        <Point X="19.75" Y="11.916" />
+        <Point X="18.375" Y="11.874" />
+        <Point X="19.75" Y="11.874" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -79,20 +79,20 @@
     </Members>
     <AssociationLine Name="ApplicationCreator" Type="UnifiedSystemofAbiturient.ApplicationCreator" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.25" Y="1.228" />
-        <Point X="2.438" Y="1.228" />
+        <Point X="6.25" Y="1.337" />
+        <Point X="2.438" Y="1.337" />
         <Point X="2.438" Y="1.75" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="RaitingCreator" Type="UnifiedSystemofAbiturient.SelectionContext" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="11.75" Y="1.331" />
-        <Point X="15.125" Y="1.331" />
+        <Point X="11.75" Y="1.455" />
+        <Point X="15.125" Y="1.455" />
         <Point X="15.125" Y="1.75" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAgGIAgBQIABAAAAAAQAAAAAAABAAQAQAgIAAAQAA=</HashCode>
+      <HashCode>AAAAgGIAgBQIABAABAAAQIAAAAAABAAQAQAgIAAAQAA=</HashCode>
       <FileName>SystemController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -196,6 +196,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SelectionByOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnifiedSystemofAbiturient.UniversityCreator">
+    <Position X="13" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UniversityCreator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

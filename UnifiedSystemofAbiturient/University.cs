@@ -7,10 +7,10 @@ namespace UnifiedSystemofAbiturient
 {
     public class University
     {
-        public string Title { get; }
-        private int Places { get; }
+        public string Title;
+        public int Places;
 
-        private List<ApplicatioN> Applications;
+        private List<ApplicatioN> Applications = new List<ApplicatioN>();
         public University(string title, int places)
         {
             Title = title;
