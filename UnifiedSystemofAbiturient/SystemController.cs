@@ -15,34 +15,86 @@ namespace UnifiedSystemofAbiturient
     public class SystemController
     {
         private List<University> Universities = new List<University>();
-        private List<Abiturient> Abiturients=new List<Abiturient>();
+        private List<User> Users=new List<User>();
+        private ActiveUserCreator ActiveUserCreator = new ActiveUserCreator();
+        private AbiturientCreator AbiturientCreator = new AbiturientCreator();
+        private StudentCreator StudentCreator = new StudentCreator();
+        private GraduateCreator GraduateCreator = new GraduateCreator();
+        private SelectionContext SelectionContext = new SelectionContext();
         public SystemController()
         {
             ApplicationCreator = new ApplicationCreator();
-            RaitingCreator = new RaitingCreator();
+            RaitingCreator = new SelectionContext();
         }
 
         private ApplicationCreator ApplicationCreator;
-        private RaitingCreator RaitingCreator;
+        private SelectionContext RaitingCreator;
 
         public void createApplication(University university, Abiturient abiturient, Subjects[] subjects)
         {
-            ApplicationCreator.createApplication(university, abiturient, subjects);
+            ApplicatioN applicatioN = ApplicationCreator.createApplication(university, abiturient, subjects);
+            university.addApplication(applicatioN);
+            abiturient.addApplication(applicatioN);
         }
 
-        public void newUniversity(String title)
+        public void newUniversity(string title, int places)
         {
-            Universities.Add(new University(title));
+            Universities.Add(new University(title,places));
         }
 
-        public void newAbiturient(String name, Dictionary<Subjects, int> points)
+        public User newActiveUser(String name, Dictionary<Subjects, int> points)
         {
-            Abiturients.Add(new Abiturient(name, points));
+            ActiveUser au = (ActiveUser)ActiveUserCreator.newUser(null);
+            au.Name = name;
+            au.Points = points;
+            Users.Add(au);
+            return au;
+        }
+        public void newAbiturient(User user, String name, Dictionary<Subjects, int> points)
+        {
+            if (user == null)
+            {
+                user = newActiveUser(name, points);
+            }
+            Abiturient a = (Abiturient)AbiturientCreator.newUser(user);
+            Users.Add(a);
+        }
+        public void newStudent(User user, String name, Dictionary<Subjects, int> points)
+        {
+            if (user == null)
+            {
+                user = newActiveUser(name, points);
+            }
+            Student s = (Student)StudentCreator.newUser(user);
+            Users.Add(s);
+        }
+        public void newGraduate(User user, String name, Dictionary<Subjects, int> points)
+        {
+            if (user == null)
+            {
+                user = newActiveUser(name, points);
+            }
+            Graduate g = (Graduate)GraduateCreator.newUser(user);
+            Users.Add(g);
         }
 
-        public List<University> createRaiting(List<University> universities)
+        public List<University> getSelection(int selectionNumber)
         {
-            return RaitingCreator.createRaiting(universities);
+            switch (selectionNumber)
+            {
+                case 0:
+                    SelectionContext.setSelection(new SelectionByOrder());
+                    break;
+                case 1:
+                    SelectionContext.setSelection(new SelectionByRait());
+                    break;
+                case 2:
+                    SelectionContext.setSelection(new SelectionByPlaces());
+                    break;
+                default:
+                    return Universities;
+            }
+            return SelectionContext.getSelection(Universities);
         }
     }
 }

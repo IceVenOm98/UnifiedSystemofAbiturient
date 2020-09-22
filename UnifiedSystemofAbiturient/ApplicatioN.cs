@@ -8,6 +8,8 @@ namespace UnifiedSystemofAbiturient
     public class ApplicatioN
     {
         private Dictionary<Subjects, int> Points;
+        private DateTime CreationDate;
+
         public Abiturient Abiturient
         {
             get => default;
