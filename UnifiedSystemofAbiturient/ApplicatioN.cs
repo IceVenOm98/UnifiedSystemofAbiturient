@@ -7,30 +7,19 @@ namespace UnifiedSystemofAbiturient
 {
     public class ApplicatioN
     {
-        private Dictionary<Subjects, int> Points;
+        private Dictionary<Subjects, int> Points = new Dictionary<Subjects, int>();
         private DateTime CreationDate;
 
-        public Abiturient Abiturient
-        {
-            get => default;
-            set
-            {
-            }
-        }
-        public University University
-        {
-            get => default;
-            set
-            {
-            }
-        }
-        public ApplicatioN(University university, Abiturient abiturient, Subjects[] subjects)
+        public User User;
+        public University University;
+        public ApplicatioN(University university, User user, Subjects[] subjects)
         {
             University = university;
-            Abiturient = abiturient;
+            User = user;
+            CreationDate = DateTime.Now;
             foreach (Subjects s in subjects)
             {
-                abiturient.Points.TryGetValue(s, out int value);
+                User.Points.TryGetValue(s, out int value);
                 Points.Add(s, value);
             }
         }
@@ -43,6 +32,14 @@ namespace UnifiedSystemofAbiturient
                 sum += point.Value;
             }
             return sum;
+        }
+        public override string ToString()
+        {
+            return "Заявление в университет "+University.Title+" подал "+User.Name+" с баллами егэ:\n"+
+                User.Points.Keys.ElementAt(0) + ": "+User.Points.Values.ElementAt(0) + "\n" +
+                User.Points.Keys.ElementAt(1) + ": "+User.Points.Values.ElementAt(1) + "\n" +
+                User.Points.Keys.ElementAt(2) + ": "+User.Points.Values.ElementAt(2)+ "\n" +
+                "Дата подачи: "+CreationDate.ToString();
         }
     }
 }

@@ -35,5 +35,9 @@ namespace UnifiedSystemofAbiturient
         {
             return Places - Applications.Count;
         }
+        public List<ApplicatioN> GetApplications()
+        {
+            return Applications;
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace UnifiedSystemofAbiturient
     public class Abiturient:UserDecorator
     {
 
-        public List<ApplicatioN> Applications;
+        public List<ApplicatioN> Applications=new List<ApplicatioN>();
 
         public void addApplication(ApplicatioN applicatioN)
         {

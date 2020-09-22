@@ -7,10 +7,12 @@ namespace UnifiedSystemofAbiturient
 {
     public enum Subjects
     {
-        Math,
-        Rus,
-        IT,
-        Phys
+        Математика,
+        Русский,
+        Информатика,
+        Физика,
+        Обществознание,
+        История
     }
     public class SystemController
     {
@@ -40,11 +42,15 @@ namespace UnifiedSystemofAbiturient
             return Universities;
         }
 
-        public void createApplication(University university, Abiturient abiturient, Subjects[] subjects)
+        public void createApplication(University university, User user, Subjects[] subjects)
         {
-            ApplicatioN applicatioN = ApplicationCreator.createApplication(university, abiturient, subjects);
+            if (user.GetType() != typeof(Abiturient))
+            {
+                user = newAbiturient(user,null,null);
+            }
+            ApplicatioN applicatioN = ApplicationCreator.createApplication(university, user, subjects);
             university.addApplication(applicatioN);
-            abiturient.addApplication(applicatioN);
+            ((Abiturient)user).addApplication(applicatioN);
         }
 
         public University newUniversity(string title, int places)
@@ -53,7 +59,7 @@ namespace UnifiedSystemofAbiturient
             return u;
         }
 
-        public User newActiveUser(String name, Dictionary<Subjects, int> points)
+        public User newActiveUser(string name, Dictionary<Subjects, int> points)
         {
             ActiveUser au = (ActiveUser)ActiveUserCreator.newUser(null);
             au.Name = name;
@@ -67,6 +73,7 @@ namespace UnifiedSystemofAbiturient
             {
                 user = newActiveUser(name, points);
             }
+            Users.Remove(user);
             Abiturient a = (Abiturient)AbiturientCreator.newUser(user);
             Users.Add(a);
             return a;
@@ -77,6 +84,7 @@ namespace UnifiedSystemofAbiturient
             {
                 user = newActiveUser(name, points);
             }
+            Users.Remove(user);
             Student s = (Student)StudentCreator.newUser(user);
             Users.Add(s);
             return s;
@@ -87,6 +95,7 @@ namespace UnifiedSystemofAbiturient
             {
                 user = newActiveUser(name, points);
             }
+            Users.Remove(user);
             Graduate g = (Graduate)GraduateCreator.newUser(user);
             Users.Add(g);
             return g;

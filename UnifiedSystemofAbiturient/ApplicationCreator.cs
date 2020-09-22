@@ -7,9 +7,9 @@ namespace UnifiedSystemofAbiturient
 {
     public class ApplicationCreator
     {
-        public ApplicatioN createApplication(University university, Abiturient abiturient, Subjects[] subjects)
+        public ApplicatioN createApplication(University university, User user, Subjects[] subjects)
         {
-            ApplicatioN applicatioN = new ApplicatioN(university, abiturient, subjects);
+            ApplicatioN applicatioN = new ApplicatioN(university, user, subjects);
             createReport(applicatioN);
             return applicatioN;
 

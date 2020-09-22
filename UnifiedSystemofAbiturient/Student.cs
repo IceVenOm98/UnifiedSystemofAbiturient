@@ -7,6 +7,9 @@ namespace UnifiedSystemofAbiturient
 {
     public class Student : UserDecorator
     {
+        public Student()
+        {
+        }
         public string showYearOfEducation()
         {
             return "3";

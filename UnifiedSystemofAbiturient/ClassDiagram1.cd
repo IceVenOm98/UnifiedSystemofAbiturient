@@ -13,7 +13,7 @@
       <Method Name="University" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AIAAAAAAABAAAEAAAAQAAAAAAAAAAAABAEAAAAAAAAA=</HashCode>
+      <HashCode>AIAAAAAAARAAAEAAAAQAAAAAAAAAAAABAEAAAAAAAAA=</HashCode>
       <FileName>University.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -22,30 +22,22 @@
     <Members>
       <Method Name="ApplicatioN" Hidden="true" />
     </Members>
-    <AssociationLine Name="Abiturient" Type="UnifiedSystemofAbiturient.Abiturient" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="15.5" Y="12.624" />
-        <Point X="15.125" Y="12.624" />
-        <Point X="15.125" Y="11.989" />
-        <Point X="14.5" Y="11.989" />
-      </Path>
-    </AssociationLine>
     <AssociationLine Name="University" Type="UnifiedSystemofAbiturient.University" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="18" Y="12.497" />
-        <Point X="18.375" Y="12.497" />
-        <Point X="18.375" Y="11.874" />
-        <Point X="19.75" Y="11.874" />
+        <Point X="18" Y="12.579" />
+        <Point X="18.375" Y="12.579" />
+        <Point X="18.375" Y="11.905" />
+        <Point X="19.75" Y="11.905" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QAAAAAEAAAAAgAAAAAAAAAAAAAAAAAIEAAAAAAAAAAA=</HashCode>
+      <HashCode>QAABAAAAAAAAgAAEAAAAAAAAAAAAAAIEAAAAAAAAAAA=</HashCode>
       <FileName>ApplicatioN.cs</FileName>
       <NewMemberFileName>Application.cs</NewMemberFileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Abiturient" />
-      <Property Name="University" />
+      <Field Name="User" />
+      <Field Name="University" />
     </ShowAsAssociation>
   </Class>
   <Class Name="UnifiedSystemofAbiturient.ApplicationCreator">
@@ -201,7 +193,7 @@
   <Class Name="UnifiedSystemofAbiturient.UniversityCreator">
     <Position X="13" Y="4" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAAABAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UniversityCreator.cs</FileName>
     </TypeIdentifier>
   </Class>

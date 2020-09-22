@@ -12,6 +12,8 @@ namespace UnifiedSystemofAbiturient
         public void setUser(User user)
         {
             User = user;
+            Name = User.Name;
+            Points = User.Points;
         }
     }
 }

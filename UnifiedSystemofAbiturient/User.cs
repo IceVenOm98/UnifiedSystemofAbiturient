@@ -8,13 +8,7 @@ namespace UnifiedSystemofAbiturient
     public abstract class User
     {
         public Dictionary<Subjects, int> Points;
-        public string Name
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public string Name;
 
         public User() { }
 
