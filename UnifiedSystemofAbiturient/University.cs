@@ -7,12 +7,14 @@ namespace UnifiedSystemofAbiturient
 {
     public class University
     {
-        public string Title { get; }
+        public string Title;
+        public int Places;
 
-        private List<ApplicatioN> Applications;
-        public University(string title)
+        private List<ApplicatioN> Applications = new List<ApplicatioN>();
+        public University(string title, int places)
         {
             Title = title;
+            Places = places;
         }
 
         public void addApplication(ApplicatioN applicatioN)
@@ -27,7 +29,16 @@ namespace UnifiedSystemofAbiturient
             {
                 sum += app.getSum();
             }
+            if (Applications.Count == 0) return 100;
             return sum / Applications.Count;
+        }
+        public int getFreePlaces()
+        {
+            return Places - Applications.Count;
+        }
+        public List<ApplicatioN> GetApplications()
+        {
+            return Applications;
         }
     }
 }

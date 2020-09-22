@@ -5,16 +5,16 @@ using System.Text;
 
 namespace UnifiedSystemofAbiturient
 {
-    public class RaitingCreator
+    public class SelectionContext
     {
-        public List<University> createRaiting(List<University> universities)
+        private Selection Selection;
+        public void setSelection(Selection selection)
         {
-            int avaragePoint;
-            foreach (University u in universities)
-            {
-                avaragePoint = u.getAveragePoint();
-            }
-            return universities;
+            Selection = selection;
+        }
+        public List<University> getSelection(List<University> universities)
+        {
+            return Selection.get(universities);
         }
     }
 }
