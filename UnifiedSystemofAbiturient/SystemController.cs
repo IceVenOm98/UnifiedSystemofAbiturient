@@ -25,11 +25,10 @@ namespace UnifiedSystemofAbiturient
         private GraduateCreator GraduateCreator = new GraduateCreator();
         private SelectionContext SelectionContext = new SelectionContext();
         private ApplicationCreator ApplicationCreator;
-        private SelectionContext RaitingCreator;
         public SystemController()
         {
             ApplicationCreator = new ApplicationCreator();
-            RaitingCreator = new SelectionContext();
+            SelectionContext = new SelectionContext();
             UniversityCreator.setUniversities(Universities);
         }
 
@@ -101,23 +100,33 @@ namespace UnifiedSystemofAbiturient
             return g;
         }
 
-        public List<University> getSelection(int selectionNumber)
+        public List<University> getSelection(int selectionNumber, bool changeOrder)
         {
+            List<University> result;
             switch (selectionNumber)
             {
-                case 0:
+                /*case 0:
                     SelectionContext.setSelection(new SelectionByOrder());
-                    break;
+                    break;*/
                 case 1:
-                    SelectionContext.setSelection(new SelectionByRait());
+                    SelectionContext.setSelection(new SelectionByRait()); //средний балл
                     break;
                 case 2:
-                    SelectionContext.setSelection(new SelectionByPlaces());
+                    SelectionContext.setSelection(new SelectionByPlaces());//количество заявлений
                     break;
                 default:
-                    return Universities;
+                    break;
             }
-            return SelectionContext.getSelection(Universities);
+            if (selectionNumber!=1||selectionNumber!=2) 
+                result = Universities;
+            else
+                result=SelectionContext.getSelection(Universities);
+            if (changeOrder)
+            {
+                SelectionContext.setSelection(new SelectionByOrder());
+                result = SelectionContext.getSelection(result);
+            }
+            return result; 
         }
     }
 }

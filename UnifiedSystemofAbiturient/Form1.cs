@@ -129,5 +129,30 @@ namespace UnifiedSystemofAbiturient
                 }
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int key;
+            switch (comboBox5.Text)
+            {
+                case "По среднему баллу":
+                    key = 1;
+                    break;
+                case "По количеству заявлений":
+                    key = 2;
+                    break;
+                default: key = -1;
+                    break;
+            }
+            
+
+            richTextBox4.Text = "";
+            foreach (University u in SystemController.getSelection(key, checkBox1.Checked))
+            {
+                richTextBox4.Text += "\n\nУниверситет " + u.Title +
+                    ". Количество мест: " + u.Places
+                    + ". Количество мест на данный момент: " + u.getFreePlaces();
+            }
+        }
     }
 }

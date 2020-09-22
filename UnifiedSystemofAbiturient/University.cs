@@ -29,6 +29,7 @@ namespace UnifiedSystemofAbiturient
             {
                 sum += app.getSum();
             }
+            if (Applications.Count == 0) return 100;
             return sum / Applications.Count;
         }
         public int getFreePlaces()

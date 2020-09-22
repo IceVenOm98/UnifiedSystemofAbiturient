@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="UnifiedSystemofAbiturient.Abiturient">
-    <Position X="10.75" Y="11.75" Width="3.75" />
+    <Position X="8" Y="11.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Abiturient.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UnifiedSystemofAbiturient.University">
-    <Position X="19.75" Y="11.5" Width="3.25" />
+    <Position X="18.25" Y="9" Width="3.25" />
     <Members>
       <Method Name="University" Hidden="true" />
     </Members>
@@ -18,16 +18,16 @@
     </TypeIdentifier>
   </Class>
   <Class Name="UnifiedSystemofAbiturient.ApplicatioN">
-    <Position X="15.5" Y="11.75" Width="2.5" />
+    <Position X="14.5" Y="7.75" Width="2.5" />
     <Members>
       <Method Name="ApplicatioN" Hidden="true" />
     </Members>
     <AssociationLine Name="University" Type="UnifiedSystemofAbiturient.University" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="18" Y="12.579" />
-        <Point X="18.375" Y="12.579" />
-        <Point X="18.375" Y="11.905" />
-        <Point X="19.75" Y="11.905" />
+        <Point X="17" Y="8.579" />
+        <Point X="17.375" Y="8.579" />
+        <Point X="17.375" Y="9.405" />
+        <Point X="18.25" Y="9.405" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -76,45 +76,37 @@
         <Point X="2.438" Y="1.75" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="RaitingCreator" Type="UnifiedSystemofAbiturient.SelectionContext" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="11.75" Y="1.455" />
-        <Point X="15.125" Y="1.455" />
-        <Point X="15.125" Y="1.75" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAgGIAgBQIABAABAAAQIAAAAAABAAQAQAgIAAAQAA=</HashCode>
+      <HashCode>AAAAAGIAgBQIABAABAAAQIAAAAAABAAQAQAgIAAAQAA=</HashCode>
       <FileName>SystemController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="ApplicationCreator" />
-      <Field Name="RaitingCreator" />
     </ShowAsAssociation>
   </Class>
   <Class Name="UnifiedSystemofAbiturient.User">
-    <Position X="10.75" Y="6" Width="1.75" />
+    <Position X="9.25" Y="6.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UnifiedSystemofAbiturient.UserDecorator">
-    <Position X="8" Y="9" Width="1.5" />
+    <Position X="5" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>UserDecorator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UnifiedSystemofAbiturient.Student">
-    <Position X="3.25" Y="11.75" Width="2.5" />
+    <Position X="0.5" Y="11.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Student.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UnifiedSystemofAbiturient.Graduate">
-    <Position X="7" Y="11.75" Width="3" />
+    <Position X="4.25" Y="11.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQCAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Graduate.cs</FileName>
@@ -128,7 +120,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="UnifiedSystemofAbiturient.ActiveUser">
-    <Position X="15" Y="9.25" Width="1.5" />
+    <Position X="12.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ActiveUser.cs</FileName>

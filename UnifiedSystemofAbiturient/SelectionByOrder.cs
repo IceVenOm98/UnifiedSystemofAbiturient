@@ -12,7 +12,7 @@ namespace UnifiedSystemofAbiturient
             List<University> universities1 = new List<University>();
             foreach(University u in universities)
             {
-                universities1.Prepend(u);
+                universities1=universities1.Prepend(u).ToList();
             }
             
             return universities1;
